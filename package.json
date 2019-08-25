@@ -1,23 +1,23 @@
 {
-  "name": "marked-toc",
+  "name": "fe-markdown-toc",
   "description": "Generate a markdown TOC (table of contents).",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/marked-toc",
+  "homepage": "https://github.com/gdaib/fe-markdown-toc",
   "author": {
     "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
+    "url": "https://github.com/gdaib"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonschlinkert/marked-toc.git"
+    "url": "https://github.com/gdaib/fe-markdown-toc.git"
   },
   "bugs": {
-    "url": "https://github.com/jonschlinkert/marked-toc/issues"
+    "url": "https://github.com/gdaib/fe-markdown-toc/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/jonschlinkert/marked-toc/blob/master/LICENSE-MIT"
+      "url": "https://github.com/gdaib/fe-markdown-toc/blob/master/LICENSE-MIT"
     }
   ],
   "bin": {
