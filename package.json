@@ -34,7 +34,6 @@
   "dependencies": {
     "lodash": "~2.4.1",
     "marked": "0.3.0",
-    "template": "~0.1.6",
     "uslug": "~1.0.3"
   },
   "keywords": [
