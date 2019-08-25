@@ -1,0 +1,49 @@
+{
+  "name": "marked-toc",
+  "description": "Generate a markdown TOC (table of contents).",
+  "version": "0.3.0",
+  "homepage": "https://github.com/jonschlinkert/marked-toc",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonschlinkert/marked-toc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/marked-toc/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/marked-toc/blob/master/LICENSE-MIT"
+    }
+  ],
+  "bin": {
+    "toc": "./cli.js"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "mocha": "~1.17.1"
+  },
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "marked": "0.3.0",
+    "template": "~0.1.6",
+    "uslug": "~1.0.3"
+  },
+  "keywords": [
+    "readme",
+    "markdown",
+    "toc",
+    "table of contents"
+  ],
+  "scripts": {
+    "test": "mocha -R spec"
+  }
+}
