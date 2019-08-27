@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{default title basename}}</title>
-    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/docs-assets/css/docs.css">
-    <link rel="stylesheet" href="{{assets}}/monokai.css">
-    <style>pre {background-color: #222; border: 1px solid #111; padding-bottom: 0;}</style>
-  </head>
-  <body>
-    <div class="container bs-docs-container">
-      <div class="content">
-        <h2>Table of Contents</h2>
-        <ul class="toc">
-        <% _.each(toc, function(heading) { %>
-        <li>
-          <a href="#<%= heading.name %>">
-            <%= heading.text %>
-          </a>
-        </li>
-        <% }) %>
-        </ul>
-        <%= content %>
-      </div>
-    </div>
-    <script src="{{assets}}/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
+const mdtoc = require('../index.js')
+const fs = require('fs')
+const { resolve } = require('path')
+
+const start = "<!-- toc -->\n";
+const stop = "\n<!-- toc stop -->";
+const clean = /<!-- toc -->[\s\S]+<!-- toc stop -->/;
+
+const toc = content => {
+  // Remove the existing TOC
+  content = content.replace(clean, start);
+
+  // Generate the new TOC
+  var table = start + mdtoc(content) + stop;
+
+  content = content.replace(start, table);
+
+  return content;
+};
+
+
+const content = fs.readFileSync(resolve(__dirname, './readme.md')).toString()
+
+console.log(mdtoc(content));

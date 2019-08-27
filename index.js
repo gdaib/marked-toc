@@ -10,14 +10,14 @@
 var marked = require("marked");
 var slugify = require("uslug");
 var _ = require("lodash");
-var utils = require("./lib/utils").default;
+var utils = require("./lib/utils");
 
 /**
  * Default template to use for generating
  * a table of contents.
  */
 
-const data2String = `{depth}{bullet}{heading}(#{url})\n`;
+const data2String = `{depth}{bullet}[{heading}](#{url})\n`;
 
 const template = data => data2String.replace(/{(.*?)}/g, (_, key) => data[key]);
 
@@ -104,6 +104,7 @@ function generate(str, options) {
 
       tocArray.push(data);
       toc += template(data);
+      // console.log(template(data),data, '==========');
     });
 
   return {
@@ -146,4 +147,6 @@ toc.raw = function(str, options) {
 
 // module.exports = toc;
 
-export default toc;
+// export default toc;
+
+module.exports = toc
