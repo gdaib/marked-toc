@@ -1,7 +1,7 @@
 {
   "name": "fe-markdown-toc",
   "description": "Generate a markdown TOC (table of contents).",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/gdaib/fe-markdown-toc",
   "author": {
     "name": "Jon Schlinkert",
