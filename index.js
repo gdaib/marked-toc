@@ -125,28 +125,26 @@ toc.raw = function(str, options) {
   return generate(str, options);
 };
 
-// toc.insert = function(str, options) {
-//   var start = '<!-- toc -->';
-//   var stop  = '<!-- toc stop -->';
-//   var strip = /<!-- toc -->[\s\S]+<!-- toc stop -->/;
+toc.insert = function(str, options) {
 
-//   var content = matter(str).content;
-//   var front   = matter.extend(str);
+}
 
-//   // Remove the existing TOC
-//   content = content.replace(strip, start);
+toc.insert = function (content, options) {
+  var start = "<!-- toc -->\n";
+  var stop = "\n<!-- toc stop -->";
+  var clean = /<!-- toc -->[\s\S]+<!-- toc stop -->/;
 
-//   // Generate the new TOC
-//   var table = '\n\n' + start + '\n\n' + toc(content, options) + '\n' + stop + '\n';
-//   return front + content.replace(start, table);
-// };
 
-/**
- * Expose `toc`
- */
+  // Remove the existing TOC 清除现有的 TOC
+  content = content.replace(clean, start);
 
-// module.exports = toc;
+  // Generate the new TOC
+  var table = start + '\n' + toc(content, options) + stop + '\n';
 
-// export default toc;
+  // Insert TOC to the contnet
+  content = content.replace(start, table);
+
+  return content;
+};
 
 module.exports = toc
